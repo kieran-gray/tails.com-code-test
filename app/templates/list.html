@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            {% for header in stores.stores[0].to_dict(omit_none=False).keys() %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for store in stores %}
+            <tr>
+                {% for attribute, value in store.to_dict(omit_none=False).items() %}
+                    <th>{{ value }}</th>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
