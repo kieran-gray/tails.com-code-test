@@ -83,14 +83,7 @@ class GetStoresResponse(BaseType):
     stores: list[Store] = field(default_factory=list)
 
 
-@dataclass
-class ViewContext:
-    view_type: str
-    stores: StoreCollection = field(default_factory=StoreCollection)
-    bbox: BBox | None = None
-
-
-@dataclass
+@dataclass(slots=True)
 class FilterViewContext:
     view_type: str
     stores: StoreCollection = field(default_factory=StoreCollection)
@@ -111,6 +104,18 @@ class FilterViewContext:
             self.radius = float(self.radius_str)
         except (MissingRadiusError, InvalidRadiusError) as err:
             self.errors["radius"] = str(err)
+
+    def to_dict(self):
+        return {
+            "view_type": self.view_type,
+            "stores": self.stores,
+            "postcode": self.postcode,
+            "radius_str": self.radius_str,
+            "radius": self.radius,
+            "errors": self.errors,
+            "bbox": self.bbox,
+            "search_location": self.search_location,
+        }
 
 
 def validate_postcode(postcode: str) -> None:
