@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+  postgres:
+    restart: always
+    image: postgis/postgis:16-3.4
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./postgres-data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+  app:
+    restart: always
+    build: .
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    ports:
+      - 5000:5000
+    volumes: 
+      - .:/app
+    depends_on:
+      - postgres
+    entrypoint: ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+  db-setup:
+    restart: on-failure
+    image: coding-test-app
+    command: ["python3", "scripts/populate_store_data.py"]
