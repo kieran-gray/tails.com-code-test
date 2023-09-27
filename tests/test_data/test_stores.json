@@ -1,0 +1,568 @@
+{
+    "stores": [
+        {
+            "latitude": 51.157421,
+            "longitude": -0.956537,
+            "name": "Alton",
+            "postcode": "GU34 2QS"
+        },
+        {
+            "latitude": 51.135177,
+            "longitude": 0.870721,
+            "name": "Ashford",
+            "postcode": "TN23 7DH"
+        },
+        {
+            "latitude": 51.818086,
+            "longitude": -0.805149,
+            "name": "Aylesbury",
+            "postcode": "HP20 1DH"
+        },
+        {
+            "name": "Bagshot",
+            "postcode": "GU19 5DG"
+        },
+        {
+            "latitude": 51.564192,
+            "longitude": 0.505725,
+            "name": "Basildon",
+            "postcode": "SS13 3BY"
+        },
+        {
+            "latitude": 51.580992,
+            "longitude": 0.443613,
+            "name": "Basildon_Pipps_Hill",
+            "postcode": "SS14 3AF"
+        },
+        {
+            "latitude": 51.233957,
+            "longitude": -1.141485,
+            "name": "Basingstoke",
+            "postcode": "RG22 4TT"
+        },
+        {
+            "latitude": 51.469573,
+            "longitude": -0.17659,
+            "name": "Battersea",
+            "postcode": "SW11 3RX"
+        },
+        {
+            "latitude": 51.521272,
+            "longitude": 0.070888,
+            "name": "Beckton",
+            "postcode": "E6 6LG"
+        },
+        {
+            "latitude": 50.844874,
+            "longitude": 0.501216,
+            "name": "Bexhill",
+            "postcode": "TN40 2JS"
+        },
+        {
+            "latitude": 51.473062,
+            "longitude": -0.018113,
+            "name": "Blackheath",
+            "postcode": "SE10 8DA"
+        },
+        {
+            "latitude": 52.002562,
+            "longitude": -0.724652,
+            "name": "Bletchley",
+            "postcode": "MK1 1BN"
+        },
+        {
+            "latitude": 50.798685,
+            "longitude": -0.667151,
+            "name": "Bognor_Regis",
+            "postcode": "PO22 9NF"
+        },
+        {
+            "latitude": 51.65656,
+            "longitude": -0.27754,
+            "name": "Borehamwood",
+            "postcode": "WD6 4PR"
+        },
+        {
+            "latitude": 51.414577,
+            "longitude": -0.755313,
+            "name": "Bracknell",
+            "postcode": "RG12 1EN"
+        },
+        {
+            "latitude": 51.482172,
+            "longitude": -0.314343,
+            "name": "Brentford",
+            "postcode": "TW8 8JW"
+        },
+        {
+            "latitude": 51.361584,
+            "longitude": 1.398326,
+            "name": "Broadstairs",
+            "postcode": "CT10 2RQ"
+        },
+        {
+            "latitude": 51.989192,
+            "longitude": -0.991638,
+            "name": "Buckingham",
+            "postcode": "MK18 1TB"
+        },
+        {
+            "latitude": 50.950564,
+            "longitude": -0.149078,
+            "name": "Burgess_Hill",
+            "postcode": "RH15 9QT"
+        },
+        {
+            "latitude": 51.340225,
+            "longitude": -0.477112,
+            "name": "Byfleet",
+            "postcode": "KT14 7NP"
+        },
+        {
+            "latitude": 51.543857,
+            "longitude": -0.136788,
+            "name": "Camden",
+            "postcode": "NW1 9EX"
+        },
+        {
+            "latitude": 51.272325,
+            "longitude": 1.062046,
+            "name": "Canterbury",
+            "postcode": "CT1 3TQ"
+        },
+        {
+            "latitude": 51.291478,
+            "longitude": 1.100144,
+            "name": "Canterbury_Sturry_Road",
+            "postcode": "CT1 1DX"
+        },
+        {
+            "latitude": 51.488666,
+            "longitude": 0.020724,
+            "name": "Charlton",
+            "postcode": "SE7 7TZ"
+        },
+        {
+            "latitude": 51.351275,
+            "longitude": 0.507259,
+            "name": "Chatham",
+            "postcode": "ME5 9SQ"
+        },
+        {
+            "latitude": 51.732632,
+            "longitude": 0.495698,
+            "name": "Chelmsford",
+            "postcode": "CM2 6XE"
+        },
+        {
+            "latitude": 50.841177,
+            "longitude": -0.756764,
+            "name": "Chichester",
+            "postcode": "PO19 7YH"
+        },
+        {
+            "latitude": 51.613179,
+            "longitude": -0.032249,
+            "name": "Chingford",
+            "postcode": "E4 8JA"
+        },
+        {
+            "latitude": 51.134507,
+            "longitude": -0.190845,
+            "name": "Crawley",
+            "postcode": "RH11 7ST"
+        },
+        {
+            "latitude": 51.451253,
+            "longitude": 0.181438,
+            "name": "Crayford",
+            "postcode": "DA1 4LD"
+        },
+        {
+            "latitude": 51.368721,
+            "longitude": -0.118057,
+            "name": "Croydon",
+            "postcode": "CR0 4NX"
+        },
+        {
+            "latitude": 51.530577,
+            "longitude": 0.145621,
+            "name": "Dagenham",
+            "postcode": "RM9 6SJ"
+        },
+        {
+            "latitude": 51.233309,
+            "longitude": -0.32926,
+            "name": "Dorking",
+            "postcode": "RH4 1RU"
+        },
+        {
+            "latitude": 51.153622,
+            "longitude": 1.298797,
+            "name": "Dover",
+            "postcode": "CT16 3PS"
+        },
+        {
+            "latitude": 51.890604,
+            "longitude": -0.514047,
+            "name": "Dunstable",
+            "postcode": "LU5 4XZ"
+        },
+        {
+            "latitude": 50.787017,
+            "longitude": 0.303047,
+            "name": "Eastbourne",
+            "postcode": "BN23 6QD"
+        },
+        {
+            "latitude": 51.137376,
+            "longitude": -0.035022,
+            "name": "East_Grinstead",
+            "postcode": "RH19 1QL"
+        },
+        {
+            "latitude": 51.451065,
+            "longitude": 0.033341,
+            "name": "Eltham",
+            "postcode": "SE9 5LT"
+        },
+        {
+            "latitude": 51.653507,
+            "longitude": -0.057264,
+            "name": "Enfield",
+            "postcode": "EN1 1TH"
+        },
+        {
+            "latitude": 51.28861,
+            "longitude": -0.760871,
+            "name": "Farnborough",
+            "postcode": "GU14 7QL"
+        },
+        {
+            "latitude": 51.218514,
+            "longitude": -0.783878,
+            "name": "Farnham",
+            "postcode": "GU9 9QJ"
+        },
+        {
+            "latitude": 51.442892,
+            "longitude": -0.412804,
+            "name": "Feltham",
+            "postcode": "TW13 4EX"
+        },
+        {
+            "latitude": 51.09503,
+            "longitude": 1.166973,
+            "name": "Folkestone",
+            "postcode": "CT19 5SY"
+        },
+        {
+            "latitude": 51.611486,
+            "longitude": -0.142239,
+            "name": "Friern_Barnet",
+            "postcode": "N11 3PW"
+        },
+        {
+            "latitude": 51.367403,
+            "longitude": 0.576371,
+            "name": "Gillingham",
+            "postcode": "ME8 0PU"
+        },
+        {
+            "latitude": 51.187514,
+            "longitude": -0.606494,
+            "name": "Godalming",
+            "postcode": "GU7 1DR"
+        },
+        {
+            "latitude": 51.444195,
+            "longitude": 0.36056,
+            "name": "Gravesend",
+            "postcode": "DA11 0DQ"
+        },
+        {
+            "latitude": 51.541902,
+            "longitude": -0.340278,
+            "name": "Greenford",
+            "postcode": "UB6 0UW"
+        },
+        {
+            "latitude": 51.785161,
+            "longitude": 0.121998,
+            "name": "Harlow",
+            "postcode": "CM20 2SX"
+        },
+        {
+            "latitude": 50.888093,
+            "longitude": 0.553454,
+            "name": "Hastings",
+            "postcode": "TN37 7PB"
+        },
+        {
+            "name": "Hatfield",
+            "postcode": "AL9 5JP"
+        },
+        {
+            "latitude": 50.850524,
+            "longitude": -0.986896,
+            "name": "Havant",
+            "postcode": "PO9 1ND"
+        },
+        {
+            "latitude": 51.51461,
+            "longitude": -0.397889,
+            "name": "Hayes",
+            "postcode": "UB4 0TU"
+        },
+        {
+            "latitude": 51.739299,
+            "longitude": -0.474067,
+            "name": "Hemel_Hempstead",
+            "postcode": "HP3 9AA"
+        },
+        {
+            "latitude": 51.580711,
+            "longitude": -0.245101,
+            "name": "Hendon",
+            "postcode": "NW9 7TH"
+        },
+        {
+            "latitude": 51.797063,
+            "longitude": -0.069212,
+            "name": "Hertford",
+            "postcode": "SG13 7RQ"
+        },
+        {
+            "latitude": 51.618643,
+            "longitude": -0.719697,
+            "name": "High_Wycombe",
+            "postcode": "HP11 1FY"
+        },
+        {
+            "latitude": 51.061363,
+            "longitude": -0.325105,
+            "name": "Horsham",
+            "postcode": "RH12 1HR"
+        },
+        {
+            "latitude": 50.83791,
+            "longitude": -0.174332,
+            "name": "Hove",
+            "postcode": "BN3 7PN"
+        },
+        {
+            "latitude": 51.574762,
+            "longitude": 0.084461,
+            "name": "Ilford",
+            "postcode": "IG2 6BE"
+        },
+        {
+            "latitude": 51.873071,
+            "longitude": -0.398986,
+            "name": "Luton",
+            "postcode": "LU1 3JH"
+        },
+        {
+            "latitude": 51.518599,
+            "longitude": -0.717023,
+            "name": "Maidenhead",
+            "postcode": "SL6 1AY"
+        },
+        {
+            "latitude": 51.293972,
+            "longitude": 0.469822,
+            "name": "Maidstone",
+            "postcode": "ME20 7TP"
+        },
+        {
+            "latitude": 50.798458,
+            "longitude": 0.059914,
+            "name": "Newhaven",
+            "postcode": "BN9 0AG"
+        },
+        {
+            "latitude": 51.405047,
+            "longitude": -0.238151,
+            "name": "New_Malden",
+            "postcode": "SW20 0JQ"
+        },
+        {
+            "latitude": 51.484387,
+            "longitude": -0.068434,
+            "name": "Old_Kent_Road",
+            "postcode": "SE1 5BA"
+        },
+        {
+            "latitude": 51.392983,
+            "longitude": 0.112496,
+            "name": "Orpington",
+            "postcode": "BR5 3RP"
+        },
+        {
+            "latitude": 50.81583,
+            "longitude": -1.054632,
+            "name": "Portsmouth",
+            "postcode": "PO3 5LZ"
+        },
+        {
+            "latitude": 51.575783,
+            "longitude": 0.604291,
+            "name": "Rayleigh",
+            "postcode": "SS6 7UP"
+        },
+        {
+            "latitude": 51.434117,
+            "longitude": -0.970504,
+            "name": "Reading",
+            "postcode": "RG2 0HB"
+        },
+        {
+            "latitude": 51.235172,
+            "longitude": -0.169397,
+            "name": "Redhill",
+            "postcode": "RH1 6QL"
+        },
+        {
+            "latitude": 51.463437,
+            "longitude": -0.288602,
+            "name": "Richmond",
+            "postcode": "TW9 1YB"
+        },
+        {
+            "latitude": 51.569209,
+            "longitude": 0.18457,
+            "name": "Romford",
+            "postcode": "RM7 0AN"
+        },
+        {
+            "latitude": 51.555701,
+            "longitude": -0.390474,
+            "name": "Ruislip",
+            "postcode": "HA4 0LN"
+        },
+        {
+            "latitude": 50.818037,
+            "longitude": -0.497556,
+            "name": "Rustington",
+            "postcode": "BN16 3RT"
+        },
+        {
+            "latitude": 51.298772,
+            "longitude": 0.193667,
+            "name": "Sevenoaks",
+            "postcode": "TN14 5EW"
+        },
+        {
+            "latitude": 51.345021,
+            "longitude": 0.735686,
+            "name": "Sittingbourne",
+            "postcode": "ME10 2XD"
+        },
+        {
+            "latitude": 51.522666,
+            "longitude": -0.616201,
+            "name": "Slough",
+            "postcode": "SL1 4XB"
+        },
+        {
+            "latitude": 51.567778,
+            "longitude": 0.703482,
+            "name": "Southend-on-Sea",
+            "postcode": "SS2 6FW"
+        },
+        {
+            "name": "Southend_Victoria",
+            "postcode": "SS1 1PA"
+        },
+        {
+            "latitude": 51.741753,
+            "longitude": -0.341337,
+            "name": "St_Albans",
+            "postcode": "AL1 2RJ"
+        },
+        {
+            "latitude": 51.429204,
+            "longitude": -0.036296,
+            "name": "Sydenham",
+            "postcode": "SE26 4PU"
+        },
+        {
+            "latitude": 51.506662,
+            "longitude": 0.104076,
+            "name": "Thamesmead",
+            "postcode": "SE28 8RD"
+        },
+        {
+            "latitude": 51.485804,
+            "longitude": 0.271413,
+            "name": "Thurrock",
+            "postcode": "RM20 3LP"
+        },
+        {
+            "latitude": 51.461326,
+            "longitude": -1.014177,
+            "name": "Tilehurst",
+            "postcode": "RG30 1PR"
+        },
+        {
+            "latitude": 51.155923,
+            "longitude": 0.28795,
+            "name": "Tunbridge_Wells",
+            "postcode": "TN2 3FB"
+        },
+        {
+            "latitude": 51.68602,
+            "longitude": -0.009966,
+            "name": "Waltham_Abbey",
+            "postcode": "EN9 1BY"
+        },
+        {
+            "latitude": 51.387939,
+            "longitude": -0.41812,
+            "name": "Walton_On_Thames",
+            "postcode": "KT12 2SS"
+        },
+        {
+            "latitude": 51.649103,
+            "longitude": -0.389487,
+            "name": "Watford",
+            "postcode": "WD17 2SF"
+        },
+        {
+            "latitude": 51.517916,
+            "longitude": -0.478082,
+            "name": "West_Drayton",
+            "postcode": "UB8 2TE"
+        },
+        {
+            "latitude": 51.429853,
+            "longitude": -0.185911,
+            "name": "Wimbledon",
+            "postcode": "SW17 0BW"
+        },
+        {
+            "latitude": 51.435581,
+            "longitude": -0.894323,
+            "name": "Winnersh",
+            "postcode": "RG41 5HH"
+        },
+        {
+            "latitude": 51.32359,
+            "longitude": -0.542921,
+            "name": "Woking",
+            "postcode": "GU22 8BD"
+        },
+        {
+            "latitude": 51.405767,
+            "longitude": -0.837922,
+            "name": "Wokingham",
+            "postcode": "RG40 2NU"
+        },
+        {
+            "latitude": 50.834955,
+            "longitude": -0.36701,
+            "name": "Worthing",
+            "postcode": "BN14 9GB"
+        }
+    ]
+}

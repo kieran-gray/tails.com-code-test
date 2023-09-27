@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: lighter;
+}
+header {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 81px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+}
+header .spacer_1 {
+    flex-grow: 1
+}
+header .spacer {
+    flex-grow: 2;
+  }
+header .title {
+    display: flex;
+}
+header .toolbar-title {
+    color: #040e2b;
+    padding-top: 35px;
+    padding-left: 50px;
+    min-width: 100px;
+}
+header #tails-logo {
+    max-width: 80px;
+    vertical-align: top;
+    object-fit: scale-down;
+    box-sizing: border-box;
+    border: 0;
+}
+.app-container {
+    padding: 20px;
+    margin: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.text-input {
+    background-color: #ffffff;
+    color: #040e2b;
+    height: 30px;
+    font-size: 16px;
+    padding: 12px 10px;
+    width: 100%;
+    align-self: center;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    margin: 5px;
+}
+.text-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #21c9c4;
+    border: 1px solid #48a090;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+thead {
+    background: #aedbef;
+}
+td, th {
+    border: 1px solid #f7eee8;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #f7eee8;
+}
+tr:hover {
+    background: #aedbef;
+}
+button {
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 8px 0;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.filter-button {
+    background-color: #21c9c4;
+}
+.input-row {
+    display: flex;
+}
+#map{
+    max-width: 1100px;
+    height: 800px;
+}
+.alert {
+    padding: 20px;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    max-width: 50%;
+}
+.error-message{
+    margin: auto;
+}
