@@ -91,14 +91,11 @@ class ViewContext:
 
 
 @dataclass
-class FilterViewContext:
-    view_type: str
-    stores: StoreCollection = field(default_factory=StoreCollection)
+class FilterViewContext(ViewContext):
     postcode: str = ""
     radius_str: str = ""
     radius: float | None = None
     errors: JsonDict = field(default_factory=dict)
-    bbox: BBox | None = None
     search_location: LatLng | None = None
 
     def __post_init__(self):
