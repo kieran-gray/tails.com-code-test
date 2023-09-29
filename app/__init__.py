@@ -1,10 +1,11 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, request, url_for
 from sqlalchemy import text
 
 import app.views as views
 from app.config import Config
 from app.data_types import ViewType
 from app.models import db
+from app.utils import parse_view_type
 
 
 def create_app() -> Flask:
@@ -24,6 +25,11 @@ def create_app() -> Flask:
     @app.errorhandler(404)
     def redirect_not_found(e):
         return redirect(url_for("view_stores", view_type=ViewType.LIST.value))
+
+    @app.before_request
+    def pre_request_parse_view_type():
+        if view_type := request.view_args.get("view_type"):
+            request.view_args["view_type"] = parse_view_type(view_type)
 
     return app
 

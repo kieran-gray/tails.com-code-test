@@ -83,15 +83,19 @@ class GetStoresResponse(BaseType):
     stores: list[Store] = field(default_factory=list)
 
 
-@dataclass(slots=True)
-class FilterViewContext:
+@dataclass
+class ViewContext:
     view_type: str
     stores: StoreCollection = field(default_factory=StoreCollection)
+    bbox: BBox | None = None
+
+
+@dataclass
+class FilterViewContext(ViewContext):
     postcode: str = ""
     radius_str: str = ""
     radius: float | None = None
     errors: JsonDict = field(default_factory=dict)
-    bbox: BBox | None = None
     search_location: LatLng | None = None
 
     def __post_init__(self):
@@ -104,18 +108,6 @@ class FilterViewContext:
             self.radius = float(self.radius_str)
         except (MissingRadiusError, InvalidRadiusError) as err:
             self.errors["radius"] = str(err)
-
-    def to_dict(self):
-        return {
-            "view_type": self.view_type,
-            "stores": self.stores,
-            "postcode": self.postcode,
-            "radius_str": self.radius_str,
-            "radius": self.radius,
-            "errors": self.errors,
-            "bbox": self.bbox,
-            "search_location": self.search_location,
-        }
 
 
 def validate_postcode(postcode: str) -> None:

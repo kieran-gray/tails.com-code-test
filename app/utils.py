@@ -1,8 +1,11 @@
 from convertbng.util import convert_bng, convert_lonlat
 from shapely import Point
+from structlog import get_logger
 
 from app.api_clients.postcodes_client import PostcodeData
 from app.data_types import LatLng, ViewType
+
+logger = get_logger()
 
 
 def get_point_from_postcode_data(postcode_data: PostcodeData) -> Point | None:
@@ -25,4 +28,5 @@ def parse_view_type(view_type: str) -> ViewType:
     try:
         return ViewType(view_type.strip().lower())
     except (ValueError, AttributeError):
+        logger.error(f"Invalid ViewType: {view_type}")
         return ViewType.LIST

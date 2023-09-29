@@ -26,4 +26,6 @@ services:
   db-setup:
     restart: on-failure
     image: coding-test-app
+    depends_on:
+      - postgres
     command: ["python3", "scripts/populate_store_data.py"]
