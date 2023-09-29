@@ -1,0 +1,23 @@
+name: CI
+run-name: tails.com coding test continuous integration
+on: [push]
+jobs:
+  dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - run: apt-get -y update && pip install pipenv
+      - run: python -m venv venv; source venv/bin/activate
+      - run: pip install -U pip; pip install pipenv
+      - run: pipenv install --dev
+  linting:
+    needs: dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - run: source venv/bin/activate
+      - run: pip install typed-ast
+      - run: black --version
+      - run: black --check alembic app scripts tests
+      - run: flake8 --version
+      - run: flake8 alembic app scripts tests
+      - run: isort --version
+      - run: isort --check alembic app scripts tests
