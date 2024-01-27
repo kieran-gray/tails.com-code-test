@@ -12,13 +12,19 @@ def get_point_from_postcode_data(postcode_data: PostcodeData) -> Point | None:
     if postcode_data.eastings and postcode_data.northings:
         return Point(postcode_data.eastings, postcode_data.northings)
     elif postcode_data.longitude and postcode_data.latitude:
-        return Point(convert_bng(postcode_data.longitude, postcode_data.latitude))
+        return Point(
+            convert_bng(postcode_data.longitude, postcode_data.latitude)
+        )
     return None
 
 
-def get_lat_lng_from_postcode_data(postcode_data: PostcodeData) -> LatLng | None:
+def get_lat_lng_from_postcode_data(
+    postcode_data: PostcodeData,
+) -> LatLng | None:
     if postcode_data.eastings and postcode_data.northings:
-        return convert_lonlat(float(postcode_data.eastings), float(postcode_data.northings))
+        return convert_lonlat(
+            float(postcode_data.eastings), float(postcode_data.northings)
+        )
     elif postcode_data.longitude and postcode_data.latitude:
         return convert_bng(postcode_data.longitude, postcode_data.latitude)
     return None

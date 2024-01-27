@@ -1,31 +1,93 @@
 version: '2.1'
 services:
+  app:
+    image: test-service/base-image
+    container_name: test-service
+    environment: 
+      - SQLALCHEMY_DATABASE_URI=postgresql://postgres:password@postgres:5432/service-db
+      - FLASK_APP=app
+    ports:
+      - 8000:8000
+    volumes: 
+      - ./:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      db-setup:
+        condition: service_completed_successfully
+    command: "python -m flask run --host 0.0.0.0 --port 8000"
+    networks:
+      - default
+      - test-network
+
   postgres:
-    restart: always
     image: postgis/postgis:16-3.4
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=service-db
     volumes:
-      - ./postgres-data/postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
-  app:
-    restart: always
-    build: .
-    environment:
-      - SQLALCHEMY_DATABASE_URI=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
-    ports:
-      - 5000:5000
-    volumes: 
-      - .:/app
-    depends_on:
-      - postgres
-    entrypoint: ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d service-db"]
+      interval: 5s
+      timeout: 5s
+      retries: 1
+
   db-setup:
-    restart: on-failure
-    image: coding-test-app
+    image: test-service/base-image
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://postgres:password@postgres:5432/service-db
     depends_on:
-      - postgres
-    command: ["python3", "scripts/populate_store_data.py"]
+      postgres:
+        condition: service_healthy
+    command: ["python", "scripts/populate_store_data.py"]
+
+  test:
+    image: test-service/dev-image
+    container_name: test-service-tests
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://postgres:password@postgres:5432/service-db
+    volumes:
+      - ./:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+  
+  pytest-debug:
+    extends:
+      service: test
+    container_name: test-service-pytest-debug
+    ports:
+      - 5678:5678
+    command: python -m debugpy --listen 0.0.0.0:5678 --wait-for-client -m
+      pytest -vv --failed-first ${PYTEST_OPTIONS-} ${PYTEST_TEST-}
+
+  base-image:
+    image: test-service/base-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    volumes: 
+      - ./:/app
+
+  dev-image:
+    image: test-service/dev-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes: 
+      - ./:/app
+
+volumes:
+  postgres:
+    driver: local
+  
+networks:
+  test-network:
+    driver: bridge
+    name: test-network

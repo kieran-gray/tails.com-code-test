@@ -52,14 +52,18 @@ class PostcodesClient:
     def __init__(self, base_url: str) -> None:
         self.base_url = base_url.rstrip("/")
 
-    def postcode_lookup(self, postcode: str) -> Result[PostcodeLookupResult, APIError]:
+    def postcode_lookup(
+        self, postcode: str
+    ) -> Result[PostcodeLookupResult, APIError]:
         url = f"{self.base_url}/{postcode}"
         result = requests.get(url)
         if result.status_code != 200:
             return Err(APIError.from_dict(result.json()))
         return Ok(PostcodeLookupResult.from_dict(result.json()))
 
-    def bulk_postcode_lookup(self, postcodes: list[str]) -> Result[PostcodeBulkLookupResult, APIError]:
+    def bulk_postcode_lookup(
+        self, postcodes: list[str]
+    ) -> Result[PostcodeBulkLookupResult, APIError]:
         result = requests.post(self.base_url, json={"postcodes": postcodes})
         if result.status_code != 200:
             return Err(APIError.from_dict(result.json()))

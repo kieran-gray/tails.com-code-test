@@ -17,7 +17,9 @@ WKT_REGEX = compile(r"-?(?:\.\d+|\d+(?:\.\d*)?)")
 
 
 def get_stores() -> dt.StoreCollection:
-    stores: Sequence[Store] = db.session.execute(db.select(Store).order_by(Store.name.asc())).scalars()
+    stores: Sequence[Store] = db.session.execute(
+        db.select(Store).order_by(Store.name.asc())
+    ).scalars()
     return dt.StoreCollection([store.to_dataclass() for store in stores])
 
 
@@ -44,14 +46,21 @@ def get_stores_in_radius(point: Point, radius: float) -> dt.StoreCollection:
         """
     )
     stmt = select(Store).from_statement(query)
-    stores = db.session.execute(stmt, {"point_wkt": point.wkt, "radius": radius_m}).scalars()
+    stores = db.session.execute(
+        stmt, {"point_wkt": point.wkt, "radius": radius_m}
+    ).scalars()
     return dt.StoreCollection([store.to_dataclass() for store in stores])
 
 
 def get_bbox() -> dt.BBox | None:
-    bbox = db.session.execute(text("SELECT ST_Extent(location) as bbox FROM store")).fetchall()[0][0]
+    bbox = db.session.execute(
+        text("SELECT ST_Extent(location) as bbox FROM store")
+    ).fetchall()[0][0]
     if not bbox:
         logger.error("No BBox found. Is database empty?")
         return None
     coords = WKT_REGEX.findall(bbox)
-    return (convert_lonlat(float(coords[0]), float(coords[1])), convert_lonlat(float(coords[2]), float(coords[3])))
+    return (
+        convert_lonlat(float(coords[0]), float(coords[1])),
+        convert_lonlat(float(coords[2]), float(coords[3])),
+    )

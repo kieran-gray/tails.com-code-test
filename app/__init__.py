@@ -27,7 +27,9 @@ def create_app() -> Flask:
         return redirect(url_for("view_stores", view_type=ViewType.LIST.value))
 
     @app.before_request
-    def pre_request_parse_view_type():
+    def pre_request_parse_view_type() -> None:
+        if not request.view_args:
+            return
         if view_type := request.view_args.get("view_type"):
             request.view_args["view_type"] = parse_view_type(view_type)
 
@@ -36,4 +38,4 @@ def create_app() -> Flask:
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True, use_reloader=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, use_reloader=True, port=8000)

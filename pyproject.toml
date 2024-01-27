@@ -1,10 +1,51 @@
 [tool.black]
-line-length = 120
+line-length = 79
 
 [tool.isort]
 profile = "black"
 multi_line_output = 3
+line_length = 79
+
+[tool.flake8]
+extend-ignore = ["E203"]
 
 [tool.mypy]
 python_version = 3.11
 ignore_missing_imports = true
+
+[tool.poetry]
+name = "tails-com-code-test"
+version = "0.1.0"
+description = ""
+authors = ["Kieran Gray <gray.kieran@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.1"
+Flask-SQLAlchemy = "^3.1.1"
+alembic = "^1.13.1"
+psycopg2-binary = "^2.9.9"
+dataclasses-jsonschema = "^2.16.0"
+PyYAML = "^6.0.1"
+SQLAlchemy = "^2.0.25"
+GeoAlchemy2 = "^0.14.3"
+shapely = "^2.0.2"
+result = "^0.16.0"
+structlog = "^24.1.0"
+convertbng = "^0.7.2"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.12.1"
+mypy = "^1.8.0"
+pytest = "^7.4.4"
+pytest-alembic = "^0.10.7"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+debugpy = "^1.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -9,7 +9,9 @@ JsonDict = dict[str, Any]
 LatLng = tuple[float, float]
 BBox = tuple[LatLng, LatLng]
 
-POSTCODE_REGEX = compile(r"^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] 0[Aa]{2})$")
+POSTCODE_REGEX = compile(
+    r"^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] 0[Aa]{2})$"  # noqa: E501
+)
 
 
 class BaseType(JsonSchemaMixin):
@@ -52,7 +54,9 @@ class Store(BaseType):
         postcode = self.postcode.upper().strip()
         cull_point = len(postcode) - 3
         if " " not in postcode:
-            postcode = postcode.replace(postcode[cull_point:], " " + postcode[cull_point:])
+            postcode = postcode.replace(
+                postcode[cull_point:], " " + postcode[cull_point:]
+            )
         return postcode
 
 
@@ -123,4 +127,6 @@ def validate_radius(radius: str) -> None:
     try:
         float(radius)
     except ValueError:
-        raise InvalidRadiusError(f"{radius} is not a valid radius. Must be type Float")
+        raise InvalidRadiusError(
+            f"{radius} is not a valid radius. Must be type Float"
+        )
